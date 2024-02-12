@@ -6,7 +6,8 @@ public class StringCalculator {
             return 0;
         }
 
-        String[] numberArray = numbers.split(",");
+        // Allowing new line as well as comma as delimiters
+        String[] numberArray = numbers.split("[,\n]");
         int sum = 0;
 
         for (String num : numberArray) {
