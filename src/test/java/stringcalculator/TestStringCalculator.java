@@ -3,6 +3,7 @@ package stringcalculator;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 public class TestStringCalculator {
     @Test
@@ -33,5 +34,11 @@ public class TestStringCalculator {
     public void testCustomDelimiter() {
         StringCalculator calculator = new StringCalculator();
         assertEquals(3, calculator.add("//;\n1;2"));
+    }
+
+    @Test
+    public void testNegativeNumbers() {
+        StringCalculator calculator = new StringCalculator();
+        assertThrows(IllegalArgumentException.class, () -> calculator.add("1,-2,3"));
     }
 }
