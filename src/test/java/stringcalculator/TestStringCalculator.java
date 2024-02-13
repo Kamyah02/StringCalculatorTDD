@@ -41,4 +41,10 @@ public class TestStringCalculator {
         StringCalculator calculator = new StringCalculator();
         assertThrows(IllegalArgumentException.class, () -> calculator.add("1,-2,3"));
     }
+
+    @Test
+    public void testIgnoreNumbersLargerThan1000() {
+        StringCalculator calculator = new StringCalculator();
+        assertEquals(2, calculator.add("2,1001"));
+    }
 }
